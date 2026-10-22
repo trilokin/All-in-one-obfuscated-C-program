@@ -1,0 +1,50 @@
+
+Open obscure.c/obscureORG.c in "vim" editor
+
+This code has      	    Size 	          : 4.4k, 
+                            Number of newlines    : 68, 
+                            Number of words       : 271, 
+			    Total number of bytes : 4460 
+
+This is a simple opaque code that represents function pointers, 
+array of function pointers,recursion,trigraphs, digraphs
+various representation of array & structure pointers, 
+Macro substitution, typedef of funtions with pointers, 
+passing functions as parameter that returns pointer to function arrays 
+and soon ....
+
+
+
+I tried this code under rules given below
+------------------------------------------
+
+    1) The size of program source must be <= 4096 bytes in length.
+       The number of characters excluding whitespace (tab, space,
+       newline, formfeed, return), and excluding any ; { or } immediately
+       followed by whitespace or end of file, must be <= 2048.
+
+    2) Bring all c programming concepts into one file (excluding syntax and 
+       semantics say datatypes, loops, switch statements etc..)
+
+    Programming style matters.
+    Usage of C compilers.
+    Representing new symbols.	
+    Run code safely.	
+
+Compilation:
+-----------
+	Replace all diagraphs and trigraphs with their orginal symbols 
+	and then compile as normal 'C' file.(Even Orignal file is attached)
+	:%s/%:/#/
+	:%s/<%/{/
+	:%s/%>/}/
+	:%s/??(/[
+	:%s/??)/]
+	:%s/??</{/
+	:%s/??>/}/
+
+			(OR)
+	gcc -o obscure obscure.c --trigraphs
+
+
+
